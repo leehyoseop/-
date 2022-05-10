@@ -102,5 +102,7 @@ kubelet --version
 kubeadm join 10.138.0.2:6443 --token rtql3e.v4dkfgig0102ihkp \
     --discovery-token-ca-cert-hash sha256:796a60ce8f0d042263696859acf0420a32e578eaecda62e1ae8d8df49371e2a6
 2번째 노드가 안될때는 kubeadm reset해주고 다시 하면 된다.
-# NotReady -> Ready 상태 Weavenet사용
+# Weavenet 설치
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+# Weavenet 삭제
+kubectl delete -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
