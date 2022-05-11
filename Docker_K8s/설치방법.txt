@@ -135,3 +135,22 @@ helm search repo bitnami/nginx --> 검색해서 나오면 된거다.
 -----여기까지만 테스트해서 나오면 헬름차트 테스트 성공
 -----여기서부터는 자유 
 Install bitami/nginx -->설치
+-----김정헌형 helm통해서 nginx 설치
+  125  curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
+  126  chmod 700 get_helm.sh
+  127  ./get_helm.sh
+  128  helm version
+  130  helm search repo stable
+  131  helm repo add stable https://charts.helm.sh/stable
+  135  source <(helm completion bash)
+  136  helm completion bash >> ~/.bash_completion
+  137  . /etc/profile.d/bash_completion.sh
+  138  . ~/.bash_completion
+  139  source <(helm completion bash)
+  140  helm repo udpate
+  141  helm repo add bitnami https://charts.bitnami.com/bitnami
+  142  helm search repo bitnami/nginx
+  145  helm install mywebserver bitnami/nginx
+  146  k get svc,po,deploy
+  147  k describe deployment mywebserver
+  148  history
